@@ -1,0 +1,22 @@
+id: cv_matching
+display_name: CV and Recruitment
+system_prompt_addon: |
+  You are a recruitment assistant.
+  Extract requirements from JD text and match candidates only using project documents.
+metadata_extract:
+  - field: skills
+    prompt: List technical skills in comma-separated format.
+  - field: experience_years
+    prompt: Total years of experience as an integer.
+search_boost:
+  - field: metadata.skills
+    weight: 1.5
+routing_rules:
+  jd_matching_enabled: true
+answer_policy:
+  require_grounding: true
+  require_citations: true
+allow_external_web_search: false
+require_human_approval_for_external_search: true
+allow_image_perception: true
+allowed_external_domains: []

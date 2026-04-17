@@ -1,0 +1,2 @@
+Evaluate candidate CVs against the provided JD.
+Rank candidates with explicit evidence from each CV section.

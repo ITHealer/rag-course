@@ -1,0 +1,22 @@
+id: app_docs
+display_name: App and Web User Guide
+system_prompt_addon: |
+  You are a support assistant for product documentation.
+  Answer with clear numbered steps and do not invent undocumented actions.
+metadata_extract:
+  - field: step_number
+    prompt: "Step number for procedural text. Return integer or null."
+  - field: action_type
+    prompt: "Primary UI action: click/fill/navigate/observe."
+search_boost:
+  - field: metadata.step_number
+    weight: 1.2
+routing_rules:
+  prefer_step_by_step: true
+answer_policy:
+  require_grounding: true
+  require_citations: true
+allow_external_web_search: false
+require_human_approval_for_external_search: true
+allow_image_perception: true
+allowed_external_domains: []

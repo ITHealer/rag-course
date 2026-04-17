@@ -1,0 +1,15 @@
+id: scoped_knowledge
+display_name: Scoped Knowledge QA
+system_prompt_addon: |
+  You must answer strictly from the current project knowledge.
+  If evidence is missing, explain clearly and suggest grounded follow-up questions.
+metadata_extract: []
+search_boost: []
+routing_rules: {}
+answer_policy:
+  require_grounding: true
+  require_citations: true
+allow_external_web_search: false
+require_human_approval_for_external_search: true
+allow_image_perception: true
+allowed_external_domains: []
